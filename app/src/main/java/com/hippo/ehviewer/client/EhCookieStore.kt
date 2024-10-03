@@ -178,7 +178,9 @@ object EhCookieStore : CookieJar {
         }
         for (cookie in expired) {
             if (cookie.persistent) {
-                db.remove(cookie)
+                launchIO {
+                    db.remove(cookie)
+                }
             }
         }
 
