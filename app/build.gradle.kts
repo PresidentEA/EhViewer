@@ -186,6 +186,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-cbor:1.7.3")
     implementation("org.jsoup:jsoup:1.18.1")
+    implementation("io.ktor:ktor-utils:3.0.0")
+
 }
 
 configurations.all {

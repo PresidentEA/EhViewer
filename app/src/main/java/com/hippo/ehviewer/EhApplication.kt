@@ -35,6 +35,7 @@ import com.hippo.ehviewer.client.EhSSLSocketFactory
 import com.hippo.ehviewer.client.EhTagDatabase
 import com.hippo.ehviewer.client.data.GalleryDetail
 import com.hippo.ehviewer.coil.DownloadThumbInterceptor
+import com.hippo.ehviewer.coil.LimitConcurrencyInterceptor
 import com.hippo.ehviewer.coil.MergeInterceptor
 import com.hippo.ehviewer.dao.buildMainDB
 import com.hippo.ehviewer.download.DownloadManager
@@ -213,6 +214,7 @@ class EhApplication : SceneApplication(), ImageLoaderFactory {
             components {
                 add(MergeInterceptor)
                 add(DownloadThumbInterceptor)
+                add(LimitConcurrencyInterceptor)
             }
             crossfade(300)
             diskCache(thumbCache)
