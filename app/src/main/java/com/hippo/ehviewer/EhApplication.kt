@@ -16,6 +16,7 @@
 package com.hippo.ehviewer
 
 import android.app.Activity
+import android.content.ComponentCallbacks2
 import android.os.StrictMode
 import android.text.Html
 import android.text.method.LinkMovementMethod
