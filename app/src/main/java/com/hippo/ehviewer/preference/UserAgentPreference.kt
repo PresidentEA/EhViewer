@@ -46,11 +46,11 @@ class UserAgentPreference @JvmOverloads constructor(
         mCustomUserAgent = ViewUtils.`$$`(dialog, R.id.custom_useragent) as EditText
 
         val currentUA = Settings.userAgent
+        mCustomUserAgent!!.setText(currentUA)
         if (currentUA in Settings.builtInUserAgents) {
             mType!!.setSelection(Settings.builtInUserAgents.indexOf(currentUA))
         } else {
             mType!!.setSelection(Settings.builtInUserAgents.size) // Select "Custom"
-            mCustomUserAgent!!.setText(currentUA)
         }
     }
 
