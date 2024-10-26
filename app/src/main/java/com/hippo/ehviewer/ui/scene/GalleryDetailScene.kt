@@ -29,7 +29,6 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -882,7 +881,7 @@ class GalleryDetailScene :
                 while (tagStr.startsWith("_")) {
                     when (tagStr.substring(1, 2)) {
                         "W" -> tag.alpha = 0.5f
-                        "L" -> tag.setTypeface(tag.typeface, Typeface.ITALIC)
+                        "L" -> tag.alpha = 0.8f
                         "U" -> status = TAG_STATUS_UP
                         "D" -> status = TAG_STATUS_DN
                     }
