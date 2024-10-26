@@ -13,8 +13,8 @@ plugins {
 }
 
 android {
-    compileSdk = 34
-    buildToolsVersion = "34.0.0"
+    compileSdk = 35
+    buildToolsVersion = "35.0.0"
     ndkVersion = "26.3.11579264"
 
     splits {
@@ -56,9 +56,9 @@ android {
     defaultConfig {
         applicationId = "org.error.ehviewer"
         minSdk = 28
-        targetSdk = 34
-        versionCode = 173900
-        versionName = "1.7.39.0"
+        targetSdk = 35
+        versionCode = 173901
+        versionName = "1.7.39.1"
         resourceConfigurations.addAll(
             listOf(
                 "zh",
