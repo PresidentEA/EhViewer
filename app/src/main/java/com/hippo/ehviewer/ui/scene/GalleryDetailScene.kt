@@ -224,7 +224,6 @@ class GalleryDetailScene :
             helper.setDialog(dialog, mGalleryDetail!!.torrentUrl)
         }
     }
-    private var mArchiveFormParamOr: String? = null
     private var mArchiveList: List<ArchiveParser.Archive>? = null
     private var mCurrentFunds: HomeParser.Funds? = null
 
@@ -1978,7 +1977,6 @@ class GalleryDetailScene :
                 request.setArgs(
                     mGalleryDetail!!.gid,
                     mGalleryDetail!!.token!!,
-                    mArchiveFormParamOr,
                     res,
                     isHAtH,
                 )
@@ -2005,7 +2003,6 @@ class GalleryDetailScene :
         override fun onSuccess(result: ArchiveParser.Result) {
             if (mRequest != null) {
                 mRequest = null
-                mArchiveFormParamOr = result.paramOr
                 mArchiveList = result.archiveList
                 mCurrentFunds = result.funds
                 bind(result.archiveList, result.funds)
