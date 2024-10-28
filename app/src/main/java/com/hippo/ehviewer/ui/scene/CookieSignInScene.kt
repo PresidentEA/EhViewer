@@ -184,8 +184,6 @@ class CookieSignInScene :
             .show()
     }
 
-    private fun storeCookie(id: String, hash: String, igneous: String) {
-        EhUtils.signOut()
     private suspend fun storeCookie(id: String, hash: String, igneous: String) {
         EhCookieStore.addCookie(newCookie(EhCookieStore.KEY_IPB_MEMBER_ID, id, EhUrl.DOMAIN_E))
         EhCookieStore.addCookie(newCookie(EhCookieStore.KEY_IPB_MEMBER_ID, id, EhUrl.DOMAIN_EX))
