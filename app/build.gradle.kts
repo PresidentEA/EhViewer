@@ -88,7 +88,6 @@ android {
         freeCompilerArgs = listOf(
             // https://kotlinlang.org/docs/compiler-reference.html#progressive
             "-progressive",
-            "-Xwhen-guards",
 
             "-opt-in=coil.annotation.ExperimentalCoilApi",
             "-opt-in=kotlin.contracts.ExperimentalContracts",
@@ -199,15 +198,15 @@ ksp {
     arg("room.generateKotlin", "true")
 }
 
-val ktlintVersion = libs.ktlint.get().version
-
 spotless {
     kotlin {
-        // https://github.com/diffplug/spotless/issues/111
-        target("src/**/*.kt")
-        ktlint(ktlintVersion)
+        ktlint()
     }
     kotlinGradle {
-        ktlint(ktlintVersion)
+        ktlint().editorConfigOverride(
+            mapOf(
+                "ktlint_standard_multiline-expression-wrapping" to "disabled",
+            ),
+        )
     }
 }
