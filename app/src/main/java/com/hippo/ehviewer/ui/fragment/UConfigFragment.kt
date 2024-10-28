@@ -121,15 +121,13 @@ class UConfigFragment : BaseFragment() {
         )
     }
 
-    private fun longLive(cookie: Cookie): Cookie {
-        return Cookie.Builder()
-            .name(cookie.name)
-            .value(cookie.value)
-            .domain(cookie.domain)
-            .path(cookie.path)
-            .expiresAt(Long.MAX_VALUE)
-            .build()
-    }
+    private fun longLive(cookie: Cookie): Cookie = Cookie.Builder()
+        .name(cookie.name)
+        .value(cookie.value)
+        .domain(cookie.domain)
+        .path(cookie.path)
+        .expiresAt(Long.MAX_VALUE)
+        .build()
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -154,9 +152,7 @@ class UConfigFragment : BaseFragment() {
         }
     }
 
-    override fun getFragmentTitle(): Int {
-        return R.string.u_config
-    }
+    override fun getFragmentTitle(): Int = R.string.u_config
 
     private inner class UConfigWebViewClient : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {

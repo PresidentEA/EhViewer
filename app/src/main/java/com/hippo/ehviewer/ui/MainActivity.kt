@@ -87,7 +87,9 @@ import com.hippo.widget.LoadImageView
 import com.hippo.yorozuya.SimpleHandler
 import com.hippo.yorozuya.ViewUtils
 
-class MainActivity : StageActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity :
+    StageActivity(),
+    NavigationView.OnNavigationItemSelectedListener {
     private val settingsLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) refreshTopScene()
@@ -229,9 +231,7 @@ class MainActivity : StageActivity(), NavigationView.OnNavigationItemSelectedLis
         }
     }
 
-    override fun onStartSceneFromIntent(clazz: Class<*>, args: Bundle?): Announcer {
-        return processAnnouncer(Announcer(clazz).setArgs(args))
-    }
+    override fun onStartSceneFromIntent(clazz: Class<*>, args: Bundle?): Announcer = processAnnouncer(Announcer(clazz).setArgs(args))
 
     override fun onCreate2(savedInstanceState: Bundle?) {
         connectivityManager = getSystemService()!!
@@ -578,7 +578,8 @@ class MainActivity : StageActivity(), NavigationView.OnNavigationItemSelectedLis
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        if (mDrawerLayout != null && (
+        if (mDrawerLayout != null &&
+            (
                 mDrawerLayout!!.isDrawerOpen(GravityCompat.START) ||
                     mDrawerLayout!!.isDrawerOpen(GravityCompat.END)
                 )

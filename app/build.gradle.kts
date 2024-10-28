@@ -198,15 +198,15 @@ ksp {
     arg("room.generateKotlin", "true")
 }
 
+val ktlintVersion = libs.ktlint.get().version
+
 spotless {
     kotlin {
-        ktlint()
+        // https://github.com/diffplug/spotless/issues/111
+        target("src/**/*.kt")
+        ktlint(ktlintVersion)
     }
     kotlinGradle {
-        ktlint().editorConfigOverride(
-            mapOf(
-                "ktlint_standard_multiline-expression-wrapping" to "disabled",
-            ),
-        )
+        ktlint(ktlintVersion)
     }
 }

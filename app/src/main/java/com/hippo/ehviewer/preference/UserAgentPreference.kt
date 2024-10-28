@@ -38,6 +38,8 @@ class UserAgentPreference @JvmOverloads constructor(
         builder.setPositiveButton(android.R.string.ok, null)
     }
 
+    override fun onCreateDialogView(): View = view
+
     override fun onDialogCreated(dialog: AlertDialog) {
         super.onDialogCreated(dialog)
         dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(this)

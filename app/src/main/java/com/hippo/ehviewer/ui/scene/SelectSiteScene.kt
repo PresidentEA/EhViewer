@@ -27,13 +27,13 @@ import com.hippo.ehviewer.client.EhUrl
 import com.hippo.ehviewer.client.EhUtils
 import com.hippo.yorozuya.ViewUtils
 
-class SelectSiteScene : SolidScene(), View.OnClickListener {
+class SelectSiteScene :
+    SolidScene(),
+    View.OnClickListener {
     private var mButtonGroup: MaterialButtonToggleGroup? = null
     private var mOk: View? = null
 
-    override fun needShowLeftDrawer(): Boolean {
-        return false
-    }
+    override fun needShowLeftDrawer(): Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
