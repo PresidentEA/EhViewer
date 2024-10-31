@@ -145,7 +145,7 @@ dependencies {
     implementation("androidx.browser:browser:1.8.0")
     implementation("androidx.collection:collection-ktx:1.4.4")
 
-    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.core:core-ktx:1.15.0")
 
     implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
     implementation("androidx.fragment:fragment-ktx:1.8.5")
