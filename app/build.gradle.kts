@@ -143,7 +143,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.biometric:biometric-ktx:1.4.0-alpha02")
     implementation("androidx.browser:browser:1.8.0")
-    implementation("androidx.collection:collection-ktx:1.4.4")
+    implementation("androidx.collection:collection-ktx:1.4.5")
 
     implementation("androidx.core:core-ktx:1.15.0")
 
