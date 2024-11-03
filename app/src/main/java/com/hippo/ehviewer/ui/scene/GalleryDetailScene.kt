@@ -30,7 +30,6 @@ import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.text.Html
@@ -1784,13 +1783,13 @@ class GalleryDetailScene :
                         // Rename images
                         val renames: MutableList<String> = ArrayList()
                         (if (diff.isNotEmpty() && diff[0].first == 0) diff.reversed() else diff).forEach {
-                            SpiderDen.findImageFile(dir, it.first).first?.let { fromFile ->
+                            SpiderDen.findImageFile(dir, it.first)?.let { fromFile ->
                                 if (it.second == -1) {
                                     launchIO { fromFile.delete() }
                                 } else {
                                     val extension = fromFile.name.let { name -> FileUtils.getExtensionFromFilename(name) }
                                     var toFileName = SpiderDen.perFilename(it.second, ".$extension")
-                                    if (SpiderDen.findImageFile(dir, it.second).first != null) {
+                                    if (SpiderDen.findImageFile(dir, it.second) != null) {
                                         toFileName += ".bak"
                                         renames.add(toFileName)
                                     }
