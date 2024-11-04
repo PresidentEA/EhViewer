@@ -66,6 +66,7 @@ class MSQLiteBuilder {
     /**
      * Creates a table with int [.COLUMN_ID] primary key.
      */
+    @JvmOverloads
     fun createTable(
         table: String,
         column: String = COLUMN_ID,
