@@ -863,7 +863,7 @@ class GalleryDetailScene :
             val prefix = namespaceToPrefix(tgs.groupName!!)
             tgName.setOnLongClickListener {
                 val tagGroupString = tgs.joinToString(", ") { t ->
-                    val filteredTag = t.replaceFirst(Regex("^_+[WUD]"), "")
+                    val filteredTag = t.replaceFirst(Regex("^(_+[WLUD])*"), "")
                     "${tgs.groupName}:$filteredTag"
                 }
                 requireActivity().addTextToClipboard(tagGroupString, false)
